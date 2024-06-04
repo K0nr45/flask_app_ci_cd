@@ -1,0 +1,21 @@
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+[6:54 PM]
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+[6:54 PM]
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+[6:54 PM]
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+[6:54 PM]
+sudo systemctl status docker
+[6:54 PM]
+sudo docker run hello-world
+[6:54 PM]
+sudo usermod -aG docker $USER
+[6:54 PM]
+newgrp docker
+NEW
+[6:57 PM]
+docker build -t flask-app .
+[6:57 PM]
+docker run -d -p 5000:5000 flask-app
